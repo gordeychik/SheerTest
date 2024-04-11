@@ -191,6 +191,7 @@
           </div>
           <button class="location__btn">задать вопрос</button>
         </div>
+        <div id="map"></div>
       </section>
     </main>
 
@@ -424,5 +425,42 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
     <script src="./scripts/popups.js"></script>
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
+    <script>
+      $(document).ready(function () {
+        function init() {
+          var myMap = new ymaps.Map(
+            "map",
+            {
+              center: [45.362897, 36.463376],
+              zoom: 14,
+            },
+            {
+              searchControlProvider: "yandex#search",
+            }
+          );
+
+          var myPlacemark1 = new ymaps.Placemark(
+            [45.356656, 36.469157],
+            {
+              balloonContent:
+                '<div class="baloon-content">Керчь, Советская улица, 11</div>',
+            },
+            {
+              iconLayout: "default#image",
+              iconImageHref: "./assets/icons/mapIcon.svg",
+              hideIconOnBalloonOpen: false,
+              iconImageSize: [25, 28],
+              iconImageOffset: [-12, -28],
+              balloonOffset: [0, -28],
+            }
+          );
+
+          myMap.geoObjects.add(myPlacemark1);
+        }
+
+        ymaps.ready(init);
+      });
+    </script>
   </body>
 </html>
