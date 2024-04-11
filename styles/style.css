@@ -1930,22 +1930,52 @@ a:visited {
 }
 
 .rent__slider {
-  position: relative;
   width: 770px;
   height: 400px;
   z-index: 1;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.rent__images {
+  position: relative;
+  border-radius: 16px;
 }
 
 .controls-slider {
+  width: 100%;
   position: absolute;
-  top: 0;left: 0;right: 0;left: 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.slick-next img, .slick-prev img {
-  width: 64px;
-  height: 64px;
+.slick-prev, .slick-next {
+  position: relative;
+  width: 68px;
+  height: 68px;
+  bottom: 0;
+  -webkit-transform: none;
+  transform: none;
 }
 
+.slick-prev {
+  left: -30px;
+}
+
+.slick-next {
+  left: 30px;
+}
+
+.slick-next img,
+.slick-prev img {
+  width: 68px;
+  height: 68px;
+}
 
 @media (max-width: 1919px) {
   .container {
