@@ -1929,6 +1929,24 @@ a:visited {
   cursor: pointer;
 }
 
+.rent__slider {
+  position: relative;
+  width: 770px;
+  height: 400px;
+  z-index: 1;
+}
+
+.controls-slider {
+  position: absolute;
+  top: 0;left: 0;right: 0;left: 0;
+}
+
+.slick-next img, .slick-prev img {
+  width: 64px;
+  height: 64px;
+}
+
+
 @media (max-width: 1919px) {
   .container {
     width: 1399px;
