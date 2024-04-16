@@ -265,6 +265,49 @@ a:visited {
   gap: 30px;
 }
 
+.header__search {
+  position: relative;
+}
+
+.header__search input[type="text"] {
+  outline: none;
+  position: absolute;
+  top: -20px;
+  right: 420px; 
+  width: 320px; 
+  height: 40px;
+  padding: 0 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  display: none; 
+  transition: width 0.3s ease, right 0.3s ease; 
+}
+
+.btn-search {
+  background-color: transparent;
+  border: none;
+  z-index: 101;
+  position: absolute;
+  top: -10px;
+  right: 430px;
+  transition: opacity 0.3s ease, right 0.3s ease; 
+}
+
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.header__search .open-search {
+  z-index: 100;
+  position: absolute; 
+  top: 50%; 
+  right: 374px; 
+  transform: translateY(-50%); 
+  cursor: pointer; 
+}
+
 .home {
   margin-top: -94px;
   padding: 254px 0 160px;
@@ -1365,7 +1408,6 @@ a:visited {
   height: 330px;
   border-radius: 16px;
   overflow: hidden;
-  
 }
 
 .choise__left-text {
@@ -2871,7 +2913,7 @@ a:visited {
     top: 84px;
     right: 0;
     opacity: 0;
-    padding: 20px 20px 100px 20px;
+    padding: 20px 20px 60px 20px;
     flex-direction: column;
     justify-content: space-between;
     align-items: start;
@@ -4097,6 +4139,10 @@ a:visited {
   .about__form {
     margin-top: 0;
     margin-bottom: 0;
+  }
+
+  .about__form-main {
+    margin: 50px auto;
   }
 }
 

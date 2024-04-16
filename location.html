@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="libs/fancybox/jquery.fancybox.css" />
-    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="./styles/main.css" />
     <title>Sheer Test</title>
   </head>
   <body class="body">
@@ -459,32 +459,37 @@
     <script src="./scripts/fancybox.js"></script>
     <script src="libs/fancybox/jquery.fancybox.pack.js"></script>
     <script>
+      $(document).ready(function () {
+        ymaps.ready(init);
 
-       $(document).ready(function() {
-       ymaps.ready(init);
+        function init() {
+          var myMap = new ymaps.Map(
+            "map",
+            {
+              center: [44.927935, 34.063657],
+              zoom: 15,
+            },
+            {
+              searchControlProvider: "yandex#search",
+            }
+          );
+          myPlacemark = new ymaps.Placemark(
+            [44.927935, 34.063657],
+            {},
+            {
+              iconLayout: "default#image",
+              iconImageHref: "assets/icons/mapIcon.svg",
+              hideIconOnBalloonOpen: false,
+              iconImageSize: [49, 64],
+              iconImageOffset: [-25, -64],
+              balloonOffset: [25, -64],
+            }
+          );
 
-       function init() {
-        var myMap = new ymaps.Map('map', {
-         center: [44.927935,34.063657],
-         zoom: 15
-        }, {
-         searchControlProvider: 'yandex#search'
-        });
-        myPlacemark = new ymaps.Placemark([44.927935,34.063657], {
-        }, {
-         iconLayout: 'default#image',
-         iconImageHref: 'assets/icons/mapIcon.svg',
-         hideIconOnBalloonOpen: false,
-         iconImageSize: [49, 64],
-         iconImageOffset: [-25, -64],
-         balloonOffset: [ 25, -64 ]
-        });
-
-        myMap.controls.remove('searchControl');
-        myMap.behaviors.disable('scrollZoom');
-        myMap.geoObjects.add(myPlacemark);
-
-       }
+          myMap.controls.remove("searchControl");
+          myMap.behaviors.disable("scrollZoom");
+          myMap.geoObjects.add(myPlacemark);
+        }
       });
     </script>
   </body>

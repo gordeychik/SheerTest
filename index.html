@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="libs/fancybox/jquery.fancybox.css" />
-    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="./styles/main.css" />
     <title>Sheer Test</title>
   </head>
   <body class="body">
@@ -101,13 +101,13 @@
             <li>
               <a href="/">Доставка и оплата</a>
             </li>
-            <li>
+            <li class="delete__for-input">
               <a href="/">О компании</a>
             </li>
-            <li>
+            <li class="delete__for-input">
               <a href="news.html">Новости</a>
             </li>
-            <li>
+            <li class="delete__for-input">
               <a href="/">Контакты</a>
             </li>
           </ul>
@@ -130,6 +130,17 @@
                   >Заказать звонок</a
                 >
               </div>
+            </div>
+          </div>
+          <div class="header__search">
+            <form>
+              <input type="text" placeholder="Поиск" required="required" />
+              <button class="btn-search hidden">
+                <img src="./assets/icons/inputSearch.svg" />
+              </button>
+            </form>
+            <div class="open-search hidden">
+              <img src="./assets/icons/search.svg" alt="close" />
             </div>
           </div>
         </div>
@@ -838,7 +849,11 @@
                   ><img src="./assets/icons/whatsapp.svg" alt="whatsappIcon"
                 /></a>
               </div>
-              <a class="footer__contacts-links-button fancybox" href="#callback-modal">Заказать звонок</a>
+              <a
+                class="footer__contacts-links-button fancybox"
+                href="#callback-modal"
+                >Заказать звонок</a
+              >
             </div>
           </div>
         </div>
@@ -990,5 +1005,6 @@
     <script src="libs/fancybox/jquery.fancybox.pack.js"></script>
     <script src="./scripts/fancybox.js"></script>
     <script src="libs/fancybox/jquery.fancybox.pack.js"></script>
+    <script src="scripts/searcher.js"></script>
   </body>
 </html>
