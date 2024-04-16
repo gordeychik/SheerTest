@@ -4,7 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="libs/fancybox/jquery.fancybox.css" />
+    <link rel="stylesheet" href="libs/slick-1.5.9/slick/slick.css" />
+    <link rel="stylesheet" href="libs/slick-1.5.9/slick/slick-theme.css" />
+    <link rel="stylesheet" href="./styles/fonts.css" />
     <link rel="stylesheet" href="./styles/main.css" />
+    <link rel="stylesheet" href="./styles/media.css" />
     <title>Sheer Test</title>
   </head>
   <body class="body">
@@ -101,13 +105,13 @@
             <li>
               <a href="/">Доставка и оплата</a>
             </li>
-            <li>
+            <li class="delete__for-input">
               <a href="/">О компании</a>
             </li>
-            <li>
-              <a href="/">Новости</a>
+            <li class="delete__for-input">
+              <a href="news.html">Новости</a>
             </li>
-            <li>
+            <li class="delete__for-input">
               <a href="/">Контакты</a>
             </li>
           </ul>
@@ -130,6 +134,17 @@
                   >Заказать звонок</a
                 >
               </div>
+            </div>
+          </div>
+          <div class="header__search">
+            <form>
+              <input type="text" placeholder="Поиск" required="required" />
+              <button class="btn-search hidden">
+                <img src="./assets/icons/inputSearch.svg" />
+              </button>
+            </form>
+            <div class="open-search hidden">
+              <img src="./assets/icons/search.svg" alt="close" />
             </div>
           </div>
         </div>
@@ -1272,15 +1287,10 @@
         </div>
       </div>
     </footer>
-    <script src="./scripts/tabs.js"></script>
-    <script src="./scripts/modalLegal.js"></script>
-    <script src="./scripts/burger.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
-    <script src="./scripts/popups.js"></script>
-    <script src="./scripts/dropdown.js"></script>
-    <script src="./scripts/counter.js"></script>
-    <script src="./scripts/fancybox.js"></script>
+    <script src="./libs/slick-1.5.9/slick/slick.min.js"></script>
     <script src="libs/fancybox/jquery.fancybox.pack.js"></script>
+    <script src="js/common.js"></script>
   </body>
 </html>
