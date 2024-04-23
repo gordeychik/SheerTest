@@ -151,6 +151,24 @@ a:visited {
   line-height: 23.71px;
   text-align: left;
   text-transform: uppercase;
+  position: relative;
+}
+
+.header__navbar li a::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: transparent;
+  border-bottom: 2px dashed transparent;
+  transition: all 0.2s ease-in;
+}
+
+.header__navbar li a:hover::after {
+  background-color: #ffffff;
+  border-bottom: 1px dashed #ffffff;
 }
 
 .header__navbar-popup1 {
@@ -214,6 +232,29 @@ a:visited {
   color: #fff;
 }
 
+.header__contacts p:hover,
+.footer__contacts p:hover {
+  animation: shake 0.3s ease-in-out;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-3px);
+  }
+  50% {
+    transform: translateX(3px);
+  }
+  75% {
+    transform: translateX(-3px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
 .header__contacts-btn {
   padding: 12px 20px;
   border-radius: 8px;
@@ -225,6 +266,11 @@ a:visited {
   line-height: 20px;
   letter-spacing: 0.03em;
   cursor: pointer;
+  transition: box-shadow 0.3s ease;
+}
+
+.header__contacts-btn:hover {
+  box-shadow: 0px 0px 83px -17px rgba(153, 0, 255, 1);
 }
 
 .header__actions-right {
@@ -234,7 +280,12 @@ a:visited {
 }
 
 .header__search {
+  cursor: pointer;
   position: relative;
+}
+
+.header__search-icon {
+  cursor: pointer;
 }
 
 .header__search input[type="text"] {
@@ -260,6 +311,7 @@ a:visited {
   top: -10px;
   right: 430px;
   transition: opacity 0.3s ease, right 0.3s ease;
+  cursor: pointer;
 }
 
 .hidden {
@@ -328,15 +380,20 @@ a:visited {
     #9747ff 6.63%,
     #7700b0 68.17%,
     #4f077c 95.32%
-  );
+  ); /* Заменяем градиент на цвет фона */
   color: #fff;
   text-transform: uppercase;
   font-size: 18px;
   font-weight: 400;
   line-height: 30px;
   letter-spacing: 0.05em;
-  text-align: left;
+  text-align: center;
   cursor: pointer;
+  transition: box-shadow 0.3s ease; /* Добавляем анимацию изменения цвета фона */
+}
+
+.home__info-btn:hover {
+  box-shadow: 0px 0px 83px -17px rgba(153, 0, 255, 1);
 }
 
 .home__widgets {
@@ -349,27 +406,31 @@ a:visited {
 }
 
 .home__widget {
+  position: relative;
   width: 100%;
   min-height: 175px;
   border-radius: 8px;
   padding-top: 24px;
   padding-left: 33px;
   background: #ececec1a;
-  position: relative;
   overflow: hidden;
-  z-index: 0;
 }
 
-.home__widget:hover::before {
+.home__widget::after {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
-  background-color: transparent;
-  box-shadow: 10px 10px 90px 67px rgba(153, 0, 255, 1);
-  z-index: 1;
-  opacity: 1;
+  width: 1px;
+  height: 1px;
+  box-shadow: 10px 10px 174px 67px rgba(153, 0, 255, 1);
+  pointer-events: none;
+  opacity: 0;
   transition: opacity 0.3s ease-in-out;
+}
+
+.home__widget:hover::after {
+  opacity: 1;
 }
 
 .home__widget p {
@@ -382,7 +443,7 @@ a:visited {
   letter-spacing: 0.03em;
   text-align: left;
   position: relative;
-  z-index: 0;
+  z-index: 1;
 }
 
 .home__widget-other {
@@ -597,6 +658,11 @@ a:visited {
   z-index: 1;
   position: relative;
   cursor: pointer;
+  transition: box-shadow 0.3s ease;
+}
+
+.delivery__info-btn:hover {
+  box-shadow: 0px 0px 83px -17px rgba(153, 0, 255, 1);
 }
 
 .delivery__wrapper {
@@ -815,6 +881,11 @@ a:visited {
   line-height: 30px;
   letter-spacing: 0.05em;
   cursor: pointer;
+  transition: box-shadow 0.3s ease;
+}
+
+.services__actions-form button:hover {
+  box-shadow: 0px 0px 83px -17px rgba(153, 0, 255, 1);
 }
 
 .order {
@@ -886,8 +957,12 @@ a:visited {
   text-align: left;
   cursor: pointer;
   margin-top: 125px;
+  transition: box-shadow 0.3s ease;
 }
 
+.order__info button:hover {
+  box-shadow: 0px 0px 83px -17px rgba(153, 0, 255, 1);
+}
 .order__widgets {
   display: grid;
   grid-template-columns: repeat(2, 2fr);
@@ -901,6 +976,11 @@ a:visited {
   padding: 46px 54px 66px 87px;
   border-radius: 8px;
   background: #ececec1a;
+  transition: box-shadow 0.6s ease;
+}
+
+.order__widget:hover {
+  box-shadow: 0px 0px 104px -2px rgba(153, 0, 255, 0.5);
 }
 
 .order__widget h4 {
@@ -1029,6 +1109,11 @@ a:visited {
   text-align: left;
   color: #fff !important;
   cursor: pointer;
+  transition: box-shadow 0.3s ease;
+}
+
+.footer__contacts-links-button:hover {
+  box-shadow: 0px 0px 83px -17px rgba(153, 0, 255, 1);
 }
 
 .footer__line {
@@ -1229,7 +1314,7 @@ a:visited {
 }
 
 .news__item-image:hover img {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 .news__item-info {
@@ -1413,7 +1498,7 @@ a:visited {
 }
 
 .choise__item-image:hover img {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 .choise__item-info {
@@ -1483,7 +1568,7 @@ a:visited {
 }
 
 .catalog__item-image:hover img {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 .catalog__item h4 {
@@ -1495,6 +1580,7 @@ a:visited {
   margin-top: 22px;
   margin-bottom: 27px;
   margin-left: 19px;
+  padding-bottom: 20px;
 }
 
 .location {
@@ -1550,6 +1636,11 @@ a:visited {
   outline: none;
   cursor: pointer;
   margin: 35px 0;
+  transition: box-shadow 0.3s ease;
+}
+
+.location__btn:hover {
+  box-shadow: 0px 0px 83px -17px rgba(153, 0, 255, 1);
 }
 
 .about {
@@ -1649,16 +1740,21 @@ a:visited {
   overflow: hidden;
 }
 
-.about__item:hover::before {
+.about__item::after {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
-  background-color: transparent;
-  box-shadow: 10px 10px 90px 67px rgba(153, 0, 255, 1);
-  z-index: 1;
-  opacity: 1;
+  width: 1px;
+  height: 1px;
+  box-shadow: 10px 10px 174px 67px rgba(153, 0, 255, 1);
+  pointer-events: none;
+  opacity: 0;
   transition: opacity 0.3s ease-in-out;
+}
+
+.about__item:hover::after {
+  opacity: 1;
 }
 
 .about__item p {
@@ -1668,6 +1764,7 @@ a:visited {
   line-height: 24px;
   letter-spacing: 0.03em;
   text-align: left;
+  z-index: 1;
 }
 
 .about__item img {
@@ -1882,16 +1979,21 @@ a:visited {
   overflow: hidden;
 }
 
-.rent__item:hover::before {
+.rent__item::after {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
-  background-color: transparent;
-  box-shadow: 10px 10px 90px 67px rgba(153, 0, 255, 1);
-  z-index: 1;
-  opacity: 1;
+  width: 1px;
+  height: 1px;
+  box-shadow: 10px 10px 174px 67px rgba(153, 0, 255, 1);
+  pointer-events: none;
+  opacity: 0;
   transition: opacity 0.3s ease-in-out;
+}
+
+.rent__item:hover::after {
+  opacity: 1;
 }
 
 .rent__item p {
@@ -1902,6 +2004,7 @@ a:visited {
   line-height: 24px;
   letter-spacing: 0.03em;
   text-align: left;
+  z-index: 2;
 }
 
 .rent__item img {
@@ -1922,12 +2025,18 @@ a:visited {
   text-align: left;
   border-radius: 8px;
   padding: 20px 40px;
+  cursor: pointer;
   background: linear-gradient(
     260.4deg,
     #9747ff 6.63%,
     #7700b0 68.17%,
     #4f077c 95.32%
   );
+  transition: box-shadow 0.3s ease;
+}
+
+.rent__button:hover {
+  box-shadow: 0px 0px 83px -17px rgba(153, 0, 255, 1);
 }
 
 .rent__name {
@@ -2003,6 +2112,7 @@ a:visited {
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  cursor: pointer;
 }
 
 .rent__overview-left-items,
@@ -2079,6 +2189,11 @@ a:visited {
   letter-spacing: 0.05em;
   text-align: left;
   cursor: pointer;
+  transition: box-shadow 0.3s ease;
+}
+
+.rent__overview-actions button:hover {
+  box-shadow: 0px 0px 83px -17px rgba(153, 0, 255, 1);
 }
 
 .rent__slider {
@@ -2576,6 +2691,11 @@ a:visited {
   letter-spacing: 0.05em;
   text-align: left;
   cursor: pointer;
+  transition: box-shadow 0.3s ease;
+}
+
+.cart__info button:hover {
+  box-shadow: 0px 0px 83px -17px rgba(153, 0, 255, 1);
 }
 
 .products__title {
@@ -2674,6 +2794,10 @@ a:visited {
   stroke-opacity: 1;
 }
 
+.products__filter-first {
+  z-index: 2;
+}
+
 .about__form-modal {
   width: 600px;
   margin-top: 0;
@@ -2697,6 +2821,31 @@ a:visited {
 
 .form-modal {
   flex-direction: column !important;
+}
+
+.btn-main {
+  padding: 14px 90px;
+  background: linear-gradient(
+    260.4deg,
+    #9747ff 6.63%,
+    #7700b0 68.17%,
+    #4f077c 95.32%
+  );
+  border: none;
+  border-radius: 8px;
+  text-transform: uppercase;
+  color: #fff !important;
+  font-size: 18px !important;
+  font-weight: 400;
+  line-height: 30px !important;
+  letter-spacing: 0.05em;
+  text-align: center !important;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+}
+
+.btn-main:hover {
+  box-shadow: 0px 0px 83px -17px rgba(153, 0, 255, 1);
 }
 
 .products__filters {
@@ -2831,6 +2980,11 @@ a:visited {
   letter-spacing: 0.05em;
   text-align: left;
   cursor: pointer;
+  transition: box-shadow 0.3s ease;
+}
+
+.products__actions-item button:hover {
+  box-shadow: 0px 0px 83px -17px rgba(153, 0, 255, 1);
 }
 
 .products__name {
@@ -2854,4 +3008,56 @@ a:visited {
   height: 586px;
   width: 1470px;
   background-color: #ddd;
+}
+
+.checkbox {
+  font-size: 12px;
+  margin-top: 30px;
+  line-height: 140%;
+  color: #c5d2e7;
+  font-weight: 400;
+  letter-spacing: normal;
+  display: flex;
+  text-align: left;
+}
+.checkbox label input {
+  position: absolute;
+  z-index: -1;
+  height: 1px !important;
+  width: 1px !important;
+  opacity: 0 !important;
+  margin: 12px 2px 0 7px !important;
+}
+.checkbox label > span {
+  position: relative;
+  padding: 5px 0 0 32px;
+  display: block;
+  cursor: pointer;
+}
+.checkbox label > span:before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 0;
+  width: 19px;
+  height: 19px;
+  border: 1px solid #c5d2e7;
+  transition: 0.2s;
+}
+.checkbox label > span:after {
+  content: "";
+  position: absolute;
+  top: 7px;
+  left: 5px;
+  width: 19px;
+  height: 19px;
+  background-image: url("../assets/icons/arrow.svg");
+  background-repeat: no-repeat;
+  color: #c5d2e7;
+  font-size: 10px;
+  opacity: 0;
+  transition: 0.2s;
+}
+.checkbox label input:checked + span:after {
+  opacity: 1;
 }

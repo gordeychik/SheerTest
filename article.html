@@ -240,6 +240,7 @@
               </p>
             </div>
             <div class="choise__right">
+              <a href="#">
               <div class="choise__item">
                 <div class="choise__item-image">
                   <img src="./assets/images/news1.png" />
@@ -249,6 +250,8 @@
                   <p>26.03.2024</p>
                 </div>
               </div>
+            </a>
+            <a href="#">
               <div class="choise__item">
                 <div class="choise__item-image">
                   <img src="./assets/images/news2.png" />
@@ -261,6 +264,8 @@
                   <p>26.03.2024</p>
                 </div>
               </div>
+            </a>
+            <a href="#">
               <div class="choise__item">
                 <div class="choise__item-image">
                   <img src="./assets/images/news3.png" />
@@ -270,6 +275,7 @@
                   <p>26.03.2024</p>
                 </div>
               </div>
+            </a>
             </div>
           </div>
         </section>
@@ -286,14 +292,22 @@
             течение 10 минут
           </h4>
           <div class="about__form-actions form-modal">
-            <input placeholder="ИМЯ" />
-            <input placeholder="ТЕЛЕФОН" />
-            <input placeholder="E-MAIL" />
-            <button>отправить</button>
+            <div class="item-form">
+              <input type="text" placeholder="ИМЯ" required="required" />
+            </div>
+            <div class="item-form">
+              <input type="text" placeholder="ТЕЛЕФОН" required="required" />
+            </div>
+            <div class="item-form">
+              <input type="text" placeholder="E-MAIL" required="required" />
+            </div>
+            <input type="submit" value="ОТПРАВИТЬ" class="btn-main" />
           </div>
-          <div class="about__form-legal">
-            <input type="checkbox" />
-            <p>Согласие на обработку персональных данных</p>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" required="required" checked="checked" />
+              <span>Согласие на обработку персональных данных</span>
+            </label>
           </div>
         </div>
       </form>

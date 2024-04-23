@@ -31,7 +31,7 @@ $(document).ready(function () {
 
 //аккордеон
 
-$(".rent__overview-right-icon").click(function () {
+$(".rent__overview-right-wrapper").click(function () {
   var $parent = $(this).closest(".rent__overview-right");
   var $items = $parent.find(".rent__overview-right-items");
   var $arrow = $(this).find(".arrow-icon");
